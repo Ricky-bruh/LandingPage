@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio | Ricky</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    <span class="logo-bracket">&lt;</span>
+                    Ricky
+                    <span class="logo-bracket">/&gt;</span>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#timeline">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div>
+                    <button class="theme-toggle" aria-label="Toggle dark mode">
+                        <svg id="moon-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-moon"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path></svg>
+                        <svg id="sun-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun" style="display: none;"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+                    </button>
+                    <button class="mobile-menu-btn" aria-label="Menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Terminal Welcome Section -->
+    <section id="home" class="hero">
+        <div class="terminal-container">
+            <div class="terminal-header">
+                <div class="terminal-controls">
+                    <div class="terminal-control control-close"></div>
+                    <div class="terminal-control control-minimize"></div>
+                    <div class="terminal-control control-maximize"></div>
+                </div>
+                <div class="terminal-title">~/portfolio/welcome.sh</div>
+            </div>
+            <div class="terminal-body">
+                <div class="terminal-line">
+                    <span class="terminal-prompt">~$</span>
+                    <div>
+                        <span class="terminal-command">whoami</span>
+                    </div>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-text">Ricky - Full Stack Developer & Software Engineer</span>
+                </div>
+                <div class="terminal-line">
+                    <span class="terminal-prompt">~$</span>
+                    <div>
+                        <span class="terminal-command">cat welcome.txt</span>
+                    </div>
+                </div>
+                <div class="terminal-line">
+                    <div class="terminal-text">
+                        <div id="typing-text">Welcome to my portfolio! I craft elegant solutions to complex problems.</div>
+                        <span class="terminal-cursor"></span>
+                        <div class="hidden-text" id="full-welcome-text">
+                            Welcome to my portfolio! I craft elegant solutions to complex problems.
+                            
+                            With a passion for clean code and innovative design, I build software that makes a difference.
+                            
+                            Explore my work below to see my expertise in action, or run 'help' to see available commands.
+                        </div>
+                    </div>
+                </div>
+                <div class="terminal-line" id="terminal-help" style="display: none;">
+                    <span class="terminal-prompt">~$</span>
+                    <div>
+                        <span class="terminal-command">help</span>
+                    </div>
+                </div>
+                <div class="terminal-line" id="help-response" style="display: none;">
+                    <div class="terminal-text">
+                        Available commands:
+                        <br>- projects    : View my latest projects
+                        <br>- skills      : See my technical skills
+                        <br>- contact     : How to get in touch
+                        <br>- experience  : My professional journey
+                        <br>- easter-egg  : ???
+                    </div>
+                </div>
+                <div id="terminal-interactive"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Code Section -->
+    <section id="portfolio" class="code-interactive">
+        <div class="container">
+            <h2>My Work</h2>
+            <p>Explore my projects and interactive code demonstrations</p>
+
+            <div class="code-portfolio-container">
+                <div class="code-editor">
+                    <div class="code-editor-header">
+                        <div class="code-editor-tabs">
+                            <div class="code-tab active">script.js</div>
+                        </div>
+                        <div class="code-editor-title">Interactive Demo</div>
+                    </div>
+                    <div class="code-editor-body">
+                        <div class="code-snippet">
+                            <pre><span class="comment">// Interactive Particle Generator</span>
+<span class="comment">// Adjust parameters below to see changes in real-time</span>
+
+<span class="keyword">const</span> <span class="function">createParticleSystem</span> = (<span class="keyword">config</span>) => {
+  <span class="keyword">const</span> particles = [];
+  <span class="keyword">const</span> canvas = document.createElement(<span class="string">'canvas'</span>);
+  <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>);
+  
+  <span class="comment">// Apply configuration</span>
+  canvas.width = config.width || <span class="number">300</span>;
+  canvas.height = config.height || <span class="number">200</span>;
+  <span class="keyword">const</span> particleCount = config.count || <span class="number">50</span>;
+  <span class="keyword">const</span> particleColor = config.color || <span class="string">'#4cc9f0'</span>;
+  <span class="keyword">const</span> particleSize = config.size || <span class="number">3</span>;
+  <span class="keyword">const</span> particleSpeed = config.speed || <span class="number">1</span>;
+  
+  <span class="comment">// Initialize particles</span>
+  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i < particleCount; i++) {
+    particles.push({
+      x: Math.random() * canvas.width,
+      y: Math.random() * canvas.height,
+      radius: Math.random() * particleSize + <span class="number">1</span>,
+      color: particleColor,
+      speedX: (Math.random() - <span class="number">0.5</span>) * particleSpeed,
+      speedY: (Math.random() - <span class="number">0.5</span>) * particleSpeed
+    });
+  }
+  
+  <span class="comment">// Animation function</span>
+  <span class="keyword">function</span> <span class="function">animate</span>() {
+    ctx.clearRect(<span class="number">0</span>, <span class="number">0</span>, canvas.width, canvas.height);
+    
+    particles.forEach(<span class="keyword">particle</span> => {
+      <span class="comment">// Update position</span>
+      particle.x += particle.speedX;
+      particle.y += particle.speedY;
+      
+      <span class="comment">// Bounce off edges</span>
+      <span class="keyword">if</span> (particle.x < <span class="number">0</span> || particle.x > canvas.width) {
+        particle.speedX *= -<span class="number">1</span>;
+      }
+      
+      <span class="keyword">if</span> (particle.y < <span class="number">0</span> || particle.y > canvas.height) {
+        particle.speedY *= -<span class="number">1</span>;
+      }
+      
+      <span class="comment">// Draw particle</span>
+      ctx.beginPath();
+      ctx.arc(particle.x, particle.y, particle.radius, <span class="number">0</span>, Math.PI * <span class="number">2</span>);
+      ctx.fillStyle = particle.color;
+      ctx.fill();
+    });
+    
+    requestAnimationFrame(animate);
+  }
+  
+  animate();
+  <span class="keyword">return</span> canvas;
+};</pre>
+                        </div>
+                        <div class="code-input-area">
+                            <textarea class="code-input" rows="5">// Modify these parameters
+const config = {
+  count: 50,
+  color: '#4cc9f0',
+  size: 3,
+  speed: 1
+};</textarea>
+                            <div class="code-output" id="particle-output"></div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3>Featured Projects</h3>
+                    <div class="portfolio-grid">
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+                            </div>
+                            <div class="portfolio-content">
+                                <h4 class="portfolio-title">Smart Data Analyzer</h4>
+                                <p class="portfolio-desc">A machine learning tool that processes complex datasets and generates insightful visualizations.</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">Python</span>
+                                    <span class="tag">TensorFlow</span>
+                                    <span class="tag">D3.js</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 19l7-7 3 3-7 7-3-3z"></path><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18l5-5z"></path><path d="M2 2l7.586 7.586"></path><circle cx="11" cy="11" r="2"></circle></svg>
+                            </div>
+                            <div class="portfolio-content">
+                                <h4 class="portfolio-title">Quantum Design System</h4>
+                                <p class="portfolio-desc">A comprehensive UI toolkit for building modern web applications with accessibility at its core.</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">TypeScript</span>
+                                    <span class="tag">CSS</span>
+                                    <span class="tag">WCAG</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="portfolio-item">
+                            <div class="portfolio-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"></rect><line x1="8" y1="21" x2="16" y2="21"></line><line x1="12" y1="17" x2="12" y2="21"></line></svg>
+                            </div>
+                            <div class="portfolio-content">
+                                <h4 class="portfolio-title">Cloud Architect</h4>
+                                <p class="portfolio-desc">Serverless architecture that scales automatically with traffic, optimizing performance and cost.</p>
+                                <div class="portfolio-tags">
+                                    <span class="tag">AWS</span>
+                                    <span class="tag">Terraform</span>
+                                    <span class="tag">Node.js</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Timeline Section -->
+    <section id="timeline" class="timeline-section">
+        <div class="container">
+            <h2>Professional Journey</h2>
+            <p>My career milestones and achievements</p>
+
+            <div class="timeline-container">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2024 - Present</div>
+                        <h3 class="timeline-title">Senior Software Engineer</h3>
+                        <p class="timeline-text">Leading architecture decisions for enterprise applications and mentoring junior developers. Implemented microservices that improved system reliability by 35%.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2022 - 2024</div>
+                        <h3 class="timeline-title">Full Stack Developer</h3>
+                        <p class="timeline-text">Developed responsive web applications and RESTful APIs. Reduced page load times by 42% through performance optimization techniques.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2020 - 2022</div>
+                        <h3 class="timeline-title">Frontend Developer</h3>
+                        <p class="timeline-text">Crafted engaging user interfaces and interactive experiences. Led the implementation of the company's design system.</p>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-date">2018 - 2020</div>
+                        <h3 class="timeline-title">Junior Developer</h3>
+                        <p class="timeline-text">Specialized in building responsive web applications and contributing to open source projects.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="skills-section">
+        <div class="container">
+            <div class="skills-container">
+                <h2>Technical Expertise</h2>
+                <p>My professional toolkit and areas of specialization</p>
+
+                <div class="skills-grid">
+                    <!-- JavaScript Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill="currentColor" d="M2 1v125h125v-125h-125zm66.119 106.513c-1.845 3.749-5.367 6.212-9.448 7.401-6.271 1.44-12.269.619-16.731-2.059-2.986-1.832-5.318-4.652-6.901-7.901l9.52-5.83c.083.035.333.487.667 1.071 1.214 2.034 2.261 3.474 4.319 4.485 2.022.69 6.461 1.131 8.175-2.427 1.047-1.81.714-7.628.714-14.065-.001-10.115.046-20.188.046-30.188h11.709c0 11 .06 21.418 0 32.152.025 6.58.596 12.446-2.07 17.361zm48.574-3.308c-4.07 13.922-26.762 14.374-35.83 5.176-1.916-2.165-3.117-3.296-4.26-5.795 4.819-2.772 4.819-2.772 9.508-5.485 2.547 3.915 4.902 6.068 9.139 6.949 5.748.702 11.531-1.273 10.234-7.378-1.333-4.986-11.77-6.199-18.873-11.531-7.211-4.843-8.901-16.611-2.975-23.335 1.975-2.487 5.343-4.343 8.877-5.235l3.688-.477c7.081-.143 11.507 1.727 14.756 5.355.904.916 1.642 1.904 3.022 4.045-3.772 2.404-3.76 2.381-9.163 5.879-1.154-2.486-3.069-4.046-5.093-4.724-3.142-.952-7.104.083-7.926 3.403-.285 1.023-.226 1.975.227 3.665 1.273 2.903 5.545 4.165 9.377 5.926 11.031 4.474 14.756 9.271 15.672 14.981.882 4.916-.213 8.105-.38 8.581z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">JavaScript</div>
+                    </div>
+
+                    <!-- React Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <g fill="currentColor"><circle cx="64" cy="64" r="11.4"></circle><path d="M107.3 45.2c-2.2-.8-4.5-1.6-6.9-2.3.6-2.4 1.1-4.8 1.5-7.1 2.1-13.2-.2-22.5-6.6-26.1-1.9-1.1-4-1.6-6.4-1.6-7 0-15.9 5.2-24.9 13.9-9-8.7-17.9-13.9-24.9-13.9-2.4 0-4.5.5-6.4 1.6-6.4 3.7-8.7 13-6.6 26.1.4 2.3.9 4.7 1.5 7.1-2.4.7-4.7 1.4-6.9 2.3C8.2 50 1.4 56.6 1.4 64s6.9 14 19.3 18.8c2.2.8 4.5 1.6 6.9 2.3-.6 2.4-1.1 4.8-1.5 7.1-2.1 13.2.2 22.5 6.6 26.1 1.9 1.1 4 1.6 6.4 1.6 7.1 0 16-5.2 24.9-13.9 9 8.7 17.9 13.9 24.9 13.9 2.4 0 4.5-.5 6.4-1.6 6.4-3.7 8.7-13 6.6-26.1-.4-2.3-.9-4.7-1.5-7.1 2.4-.7 4.7-1.4 6.9-2.3 12.5-4.8 19.3-11.4 19.3-18.8s-6.8-14-19.3-18.8zM92.5 14.7c4.1 2.4 5.5 9.8 3.8 20.3-.3 2.1-.8 4.3-1.4 6.6-5.2-1.2-10.7-2-16.5-2.5-3.4-4.8-6.9-9.1-10.4-13 7.4-7.3 14.9-12.3 21-12.3 1.3 0 2.5.3 3.5.9zM81.3 74c-1.8 3.2-3.9 6.4-6.1 9.6-3.7.3-7.4.4-11.2.4-3.9 0-7.6-.1-11.2-.4-2.2-3.2-4.2-6.4-6-9.6-1.9-3.3-3.7-6.7-5.3-10 1.6-3.3 3.4-6.7 5.3-10 1.8-3.2 3.9-6.4 6.1-9.6 3.7-.3 7.4-.4 11.2-.4 3.9 0 7.6.1 11.2.4 2.2 3.2 4.2 6.4 6 9.6 1.9 3.3 3.7 6.7 5.3 10-1.7 3.3-3.4 6.6-5.3 10zm8.3-3.3c1.5 3.5 2.7 6.9 3.8 10.3-3.4.8-7 1.4-10.8 1.9 1.2-1.9 2.5-3.9 3.6-6 1.2-2.1 2.3-4.2 3.4-6.2zM64 97.8c-2.4-2.6-4.7-5.4-6.9-8.3 2.3.1 4.6.2 6.9.2 2.3 0 4.6-.1 6.9-.2-2.2 2.9-4.5 5.7-6.9 8.3zm-18.6-15c-3.8-.5-7.4-1.1-10.8-1.9 1.1-3.3 2.3-6.8 3.8-10.3 1.1 2 2.2 4.1 3.4 6.1 1.2 2.2 2.4 4.1 3.6 6.1zm-7-25.5c-1.5-3.5-2.7-6.9-3.8-10.3 3.4-.8 7-1.4 10.8-1.9-1.2 1.9-2.5 3.9-3.6 6-1.2 2.1-2.3 4.2-3.4 6.2zM64 30.2c2.4 2.6 4.7 5.4 6.9 8.3-2.3-.1-4.6-.2-6.9-.2-2.3 0-4.6.1-6.9.2 2.2-2.9 4.5-5.7 6.9-8.3zm22.2 21l-3.6-6c3.8.5 7.4 1.1 10.8 1.9-1.1 3.3-2.3 6.8-3.8 10.3-1.1-2.1-2.2-4.2-3.4-6.2zM31.7 35c-1.7-10.5-.3-17.9 3.8-20.3 1-.6 2.2-.9 3.5-.9 6 0 13.5 4.9 21 12.3-3.5 3.8-7 8.2-10.4 13-5.8.5-11.3 1.4-16.5 2.5-.6-2.3-1-4.5-1.4-6.6zM7 64c0-4.7 5.7-9.7 15.7-13.4 2-.8 4.2-1.5 6.4-2.1 1.6 5 3.6 10.3 6 15.6-2.4 5.3-4.5 10.5-6 15.5C15.3 75.6 7 69.6 7 64zm28.5 49.3c-4.1-2.4-5.5-9.8-3.8-20.3.3-2.1.8-4.3 1.4-6.6 5.2 1.2 10.7 2 16.5 2.5 3.4 4.8 6.9 9.1 10.4 13-7.4 7.3-14.9 12.3-21 12.3-1.3 0-2.5-.3-3.5-.9zM96.3 93c1.7 10.5.3 17.9-3.8 20.3-1 .6-2.2.9-3.5.9-6 0-13.5-4.9-21-12.3 3.5-3.8 7-8.2 10.4-13 5.8-.5 11.3-1.4 16.5-2.5.6 2.3 1 4.5 1.4 6.6zm9-15.6c-1.6 5-3.6 10.3-6 15.6-2.4-5.3-4.5-10.5-6-15.6 1.6-5.1 3.7-10.3 6-15.6 2.4 5.3 4.5 10.5 6 15.6zm-39.1-21.3h-4v10h-6v4h6v6h4v-6h6v-4h-6v-10z"></path></g>
+                            </svg>
+                        </div>
+                        <div class="skill-name">React</div>
+                    </div>
+
+                    <!-- Node.js Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill="currentColor" d="M112.771 30.334L68.674 4.729c-2.781-1.584-6.402-1.584-9.205 0L14.901 30.334C12.031 31.985 10 35.088 10 38.407v51.142c0 3.319 2.084 6.423 4.954 8.083l11.775 6.688c5.628 2.772 7.617 2.772 10.178 2.772 8.333 0 13.093-5.039 13.093-13.828v-50.49c0-.713-.371-1.774-1.071-1.774h-5.623C42.594 41 41 42.061 41 42.773v50.49c0 3.896-3.524 7.773-10.11 4.48L18.723 90.73c-.424-.23-.723-.693-.723-1.181V38.407c0-.482.555-.966.982-1.213l44.424-25.561c.415-.235 1.025-.235 1.439 0l43.882 25.555c.42.253.272.722.272 1.219v51.142c0 .488.183.963-.232 1.198l-44.086 25.576c-.378.227-.847.227-1.261 0l-11.307-6.749c-.341-.198-.746-.269-1.073-.086-3.146 1.783-3.726 2.02-6.677 3.043-.726.253-1.797.692.41 1.929l14.798 8.754a9.294 9.294 0 004.647 1.246c1.642 0 3.25-.426 4.667-1.246l43.885-25.582c2.87-1.672 4.23-4.764 4.23-8.083V38.407c0-3.319-1.36-6.414-4.229-8.073zM77.91 81.445c-11.726 0-14.309-3.235-15.17-9.066-.1-.628-.633-1.379-1.272-1.379h-5.731c-.709 0-1.279.86-1.279 1.566 0 7.466 4.059 16.512 23.453 16.512 14.039 0 22.088-5.455 22.088-15.109 0-9.572-6.467-12.084-20.082-13.886-13.762-1.819-15.16-2.738-15.16-5.962 0-2.658 1.184-6.203 11.374-6.203 9.105 0 12.461 1.954 13.842 8.091.118.577.645.991 1.24.991h5.754c.354 0 .692-.143.94-.396.24-.272.367-.613.335-.979-.891-10.568-7.912-15.493-22.112-15.493-12.631 0-20.166 5.334-20.166 14.275 0 9.698 7.497 12.378 19.622 13.577 14.505 1.422 15.633 3.542 15.633 6.395 0 4.955-3.978 7.066-13.309 7.066z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">Node.js</div>
+                    </div>
+
+                    <!-- TypeScript Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill="currentColor" d="M2 63.91v62.5h125v-125H2zm100.73-5a15.56 15.56 0 017.82 4.5 20.58 20.58 0 013 4c0 .16-5.4 3.81-8.69 5.85-.12.08-.6-.44-1.13-1.23a7.09 7.09 0 00-5.87-3.53c-3.79-.26-6.23 1.73-6.21 5a4.58 4.58 0 00.54 2.34c.83 1.73 2.38 2.76 7.24 4.86 8.95 3.85 12.78 6.39 15.16 10 2.66 4 3.31 10.46 1.45 15.24-2 5.2-6.9 8.73-13.83 9.9a38.32 38.32 0 01-9.52-.1A23 23 0 0180 109.19c-1.15-1.27-3.39-4.58-3.25-4.82a9.34 9.34 0 011.15-.73l4.6-2.64 3.59-2.08.75 1.11a16.78 16.78 0 004.74 4.54c4 2.1 9.46 1.81 12.16-.62a5.43 5.43 0 00.69-6.92c-1-1.39-3-2.56-8.59-5-6.45-2.78-9.23-4.5-11.77-7.24a16.48 16.48 0 01-3.43-6.25 25 25 0 01-.22-8c1.33-6.23 6-10.58 12.82-11.87a31.66 31.66 0 019.49.26zm-29.34 5.24v5.12H57.16v46.23H45.65V69.26H29.38v-5a49.19 49.19 0 01.14-5.16c.06-.08 10-.12 22-.1h21.81z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">TypeScript</div>
+                    </div>
+
+                    <!-- Python Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill="currentColor" d="M63.391 1.988c-4.222.02-8.252.379-11.8 1.007-10.45 1.846-12.346 5.71-12.346 12.837v9.411h24.693v3.137h-33.961c-7.176 0-13.46 4.313-15.426 12.521-2.268 9.405-2.368 15.275 0 25.096 1.755 7.311 5.947 12.519 13.124 12.519h8.491v-11.282c0-8.151 7.051-15.34 15.426-15.34h24.665c6.866 0 12.346-5.654 12.346-12.548v-23.513c0-6.693-5.646-11.72-12.346-12.837-4.244-.706-8.645-1.027-12.866-1.008zm-13.354 7.569c2.55 0 4.634 2.117 4.634 4.721 0 2.593-2.083 4.69-4.634 4.69-2.56 0-4.633-2.097-4.633-4.69-.001-2.604 2.073-4.721 4.633-4.721z"></path><path fill="currentColor" d="M91.682 28.38v10.966c0 8.5-7.208 15.655-15.426 15.655h-24.665c-6.756 0-12.346 5.783-12.346 12.549v23.515c0 6.691 5.818 10.628 12.346 12.547 7.816 2.297 15.312 2.713 24.665 0 6.216-1.801 12.346-5.423 12.346-12.547v-9.412h-24.664v-3.138h37.012c7.176 0 9.852-5.005 12.348-12.519 2.578-7.735 2.467-15.174 0-25.096-1.774-7.145-5.161-12.521-12.348-12.521h-9.268zm-13.873 59.547c2.561 0 4.634 2.097 4.634 4.692 0 2.602-2.074 4.719-4.634 4.719-2.55 0-4.633-2.117-4.633-4.719 0-2.595 2.083-4.692 4.633-4.692z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">Python</div>
+                    </div>
+
+                    <!-- AWS Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill="currentColor" d="M38.089 77.466l-11.4 4.896 10.559 4.514 12.241-4.514-11.4-4.896zm-17.138 6.12l-.382 22.034 16.679 7.345V90.089l-16.297-6.503zm34.276 0l-15.073 5.739v21.575l15.073-6.121V83.586zm17.979-68.551L61.73 19.931l10.635 4.515 12.241-4.515-11.4-4.896zm-15.914 6.503v22.034l14.231 4.132.459-20.046-14.69-6.12zm31.828 1.224L75.654 28.5v21.652l13.466-5.739V22.762z"></path><path fill="currentColor" d="M28.034 22.382l44.483 18.893.459 51.991-44.942-18.98V22.382zm51.064 0l44.483 19.371v52.429l-44.483-19.371V22.382z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">AWS</div>
+                    </div>
+
+                    <!-- Docker Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill="currentColor" d="M124.8 52.1c-4.3-2.5-10-2.8-14.8-1.4-.6-5.2-4-9.7-8-12.9l-1.6-1.3-1.4 1.6c-2.7 3.1-3.5 8.3-3.1 12.3.3 2.9 1.2 5.9 3 8.3-1.4.8-2.9 1.9-4.3 2.4-2.8 1-5.9 2-8.9 2H79V49.8h-6V41h-6v8.8h-6.1v8.8h-7.9c-.6 0-1.7-.1-2-.9-.2-1.1.1-2 .6-2.8l.5-.7c.4-.5.
+.....
+Switch
+76.2c0-5.6-2.1-11-5.9-15.1 1.6-3.5 4.1-6.3 7.8-7.8 1.6-.6 3.3-1.1 4.9-1.2 5.9-.4 10.8 2.9 13.8 6.1 3.8-1.3 8-1.2 11.4.5 4.2 2.1 7.2 6.3 7.4 11.4.1 1.2-.1 2.6-.5 4.1-1.2 4.6-4.4 8.3-8.9 10.1-.9.3-1.9.6-2.9.8.1-.5.2-1 .2-1.5 0-3.1-2.8-5.6-6.3-5.6h-72c-.8 0-1.5.1-2.2.4-1.4-3.4-1.4-7.1.2-10.3z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">Docker</div>
+                    </div>
+
+                    <!-- Git Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill="currentColor" d="M124.737 58.378L69.621 3.264c-3.172-3.174-8.32-3.174-11.497 0L46.68 14.71l14.518 14.518c3.375-1.139 7.243-.375 9.932 2.314 2.703 2.706 3.461 6.607 2.294 9.993l13.992 13.993c3.385-1.167 7.292-.413 9.994 2.295 3.78 3.777 3.78 9.9 0 13.679a9.673 9.673 0 01-13.683 0 9.677 9.677 0 01-2.105-10.521L68.574 47.933l-.002 34.341a9.708 9.708 0 012.566 1.841c3.776 3.777 3.776 9.898 0 13.683-3.779 3.777-9.904 3.777-13.679 0-3.778-3.784-3.778-9.905 0-13.683a9.65 9.65 0 013.167-2.11V47.333a9.581 9.581 0 01-3.167-2.111c-2.862-2.86-3.551-7.06-2.083-10.576L41.056 20.333 3.264 58.123a8.133 8.133 0 000 11.5l55.117 55.114c3.174 3.174 8.32 3.174 11.499 0l54.858-54.858a8.135 8.135 0 00-.001-11.501z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">Git</div>
+                    </div>
+
+                    <!-- MongoDB Skill -->
+                    <div class="skill-item">
+                        <div class="skill-icon">
+                            <div class="skill-level"></div>
+                            <svg viewBox="0 0 128 128">
+                                <path fill-rule="evenodd" clip-rule="evenodd" fill="currentColor" d="M90.491 57.282c-.37-4.79-1.496-9.409-3.062-13.934-3.244-10.104-8.45-19.046-15.783-26.74-1.854-1.946-3.916-3.729-5.209-6.151-.818-1.532-1.597-3.085-2.394-4.629l-.505-1.273c-.085.292-.139.396-.142.501-.065 2.517-1.491 4.224-3.267 5.817-1.997 1.793-3.856 3.739-5.775 5.618l-5.901 7.763c-1.592 2.925-3.182 5.85-4.772 8.775l-3.19 8.617-.096 1.131.342.158c.11-.119.576-.634.668-.787 3.628-6.103 7.229-12.223 10.928-18.286 1.152-2.567 2.512-5.036 3.778-7.55 1.01-2.004 2.079-3.975 3.085-5.979.224-.443.607-.763.964-1.115l.248.058c-.033 1.259-.064 2.518-.098 3.777.147 1.605.158 3.236.41 4.811.28 1.756.654 3.502 1.102 5.224 1.211 4.674 3.091 9.099 5.093 13.485.667 1.456 1.419 2.879 2.081 4.341.51 1.124.928 2.298 1.373 3.457l.023.051-.326.16c-.146-.354-.271-.718-.434-1.061-.589-1.235-1.22-2.45-1.797-3.686-1.411-3.024-2.891-6.022-4.278-9.06-.958-2.095-1.753-4.275-2.732-6.366-.771-1.646-1.821-3.146-3.168-4.406a8.281 8.281 0 00-1.756-1.121c-.243.807-.532 1.566-.694 2.354l-.485 8.056c-.28 2.647-.17 5.243.329 7.828.997 5.179 3.111 9.882 6.092 14.226 2.445 3.562 4.84 7.138 7.388 10.615l.384.483.256-.458a170.827 170.827 0 001.899-2.994c2.151-3.478 4.099-7.086 6.329-10.507 2.327-3.562 4.364-7.302 6.636-10.904l.172-.276-.275-.174c-1.234.003-2.469.037-3.701.033-2.722-.013-5.443-.072-8.164-.108l-.537-.003-.196-.361v-.003c.162.006.32.018.48.018 4.506.012 9.013.024 13.519.036 2.942.002 5.885.002 8.825.001h.095z"></path>
+                            </svg>
+                        </div>
+                        <div class="skill-name">MongoDB</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p>Interested in working together? Let's connect</p>
+
+            <div class="contact-container">
+                <div class="contact-info">
+                    <h3>Contact Information</h3>
+                    <p>Feel free to reach out with any questions, opportunities, or just to say hello!</p>
+                    <ul class="contact-links">
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path><polyline points="22,6 12,13 2,6"></polyline></svg>
+                            <a href="mailto:hello@rickydev.com">hello@rickydev.com</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                            San Francisco, CA
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                            <a href="https://twitter.com/rickydev" target="_blank">@rickydev</a>
+                        </li>
+                        <li>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                            <a href="https://github.com/rickydev" target="_blank">github.com/rickydev</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="contact-form">
+                    <h3>Send Message</h3>
+                    <form id="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Name</label>
+                            <input type="text" id="name" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email</label>
+                            <input type="email" id="email" class="form-input" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="subject" class="form-label">Subject</label>
+                            <input type="text" id="subject" class="form-input">
+                        </div>
+                        <div class="form-group">
+                            <label for="message" class="form-label">Message</label>
+                            <textarea id="message" class="form-input form-textarea" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-container">
+                <div>
+                    <p>&copy; 2025 Ricky | Full Stack Developer</p>
+                </div>
+                <ul class="footer-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#portfolio">Portfolio</a></li>
+                    <li><a href="#timeline">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="social-links">
+                    <a href="#" class="social-btn" aria-label="GitHub">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="Twitter">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg>
+                    </a>
+                    <a href="#" class="social-btn" aria-label="LinkedIn">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Easter Eggs and Hidden Elements -->
+    <div class="terminal-command-cue" id="terminal-command-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+    </div>
+    
+    <div class="cmd-popup" id="cmd-popup">
+        <div class="cmd-title">Enter a command:</div>
+        <div class="cmd-input-wrapper">
+            <span class="cmd-prompt">$</span>
+            <input type="text" class="cmd-input" id="cmd-input" autocomplete="off">
+        </div>
+        <div class="cmd-results" id="cmd-results"></div>
+    </div>
+
+    <div class="konami-code-egg" id="konami-egg">
+        <div class="easter-egg-content">
+            <h3 class="easter-egg-title">Secret Developer Mode Unlocked!</h3>
+            <p class="secret-message">You found the hidden Easter egg! As a fellow developer with elite keyboard skills, you've unlocked the secret. The code is in your hands now.</p>
+            <button class="close-egg" id="close-egg">Close</button>
+        </div>
+    </div>
+
+    <div class="debug-panel" id="debug-panel">
+        <h3 class="debug-title">Debug Panel</h3>
+        <div class="debug-item">
+            <div class="debug-label">Browser Details:</div>
+            <div class="debug-value" id="debug-browser"></div>
+        </div>
+        <div class="debug-item">
+            <div class="debug-label">Screen Resolution:</div>
+            <div class="debug-value" id="debug-screen"></div>
+        </div>
+        <div class="debug-item">
+            <div class="debug-label">DOM Elements:</div>
+            <div class="debug-value" id="debug-dom"></div>
+        </div>
+        <div class="debug-item">
+            <div class="debug-label">Page Load Time:</div>
+            <div class="debug-value" id="debug-load"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
